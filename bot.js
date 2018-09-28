@@ -21,157 +21,29 @@ client.on('ready', () => {
   console.log(`Users! [ " ${client.users.size} " ]`);
   console.log(`channels! [ " ${client.channels.size} " ]`);
 });
+
+
 client.on('ready', () => {
-    client.user.setStatus('online');
+    client.user.setActivity("PUBG",{type: 'PLAYING'});
+
 });
 
+client.on('ready', async() => {
+var server = "487652334449590272"; // ايدي السررفر
+var channel = "487652334449590274";//ايدي الروم
+    setInterval(()=>{
+     client.guilds.get(server).channels.get(channel).send('**مهستر مهستر مهستر مهمهستر مهستر مهسترمهستر مهستر مهستر مهمهستر مهستر مهستر  مهستر مهستر مهستر مهمهستر مهستر مهستر مهستر مهستر مهستر مهمهستر مهستر مهستر**')
+    },305);
+})
 
 
 
-client.on('guildCreate', guild => {
-    var embed = new Discord.RichEmbed()
-    .setColor(0x5500ff)
-    .setDescription(`**شكرا ${message.guild.owner} علي ثقتك بفريق NoobBot !
-    Thanks ${message.guild.owner} for trust HOLDER Bot Team! **`)
-        guild.owner.send(embed)
-  });
+client.on('ready', async() => {
+var server = "431397251445817345"; // ايدي السررفر
+var channel = "495302676515389453";//ايدي الروم
+    setInterval(()=>{
+    client.guilds.get(server).channels.get(channel).send('#daily')
+    },86400);
+})
 
-
-
-
-
-  client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-   
-   **
-  
-   
-           『General Commands | اوامر عامه』
-❖$avatar @name | صوره الشخص
-
-   **
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-   
-     client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-   
-   **
-     
-              『Admins Commands | اوامر اداريه』
-❖$ban @name [reason] | اعطاء العضو باند
-
-**
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-   
-   
-        client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-		 **
-   
-   
-              『Games Commands | اوامر الالعاب』
-
-**
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-   
-              client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-		 **
-   
-           『Music Commands  | اوامر الاغاني』
-         
-$play | لتشغيل اغنية')
-$join | دخول رومك الصوتي')
-$disconnect | الخروج من رومك الصوتي')
-$skip | تخطي الأغنية')
-$pause | ايقاف الاغنية مؤقتا')
-$resume | تكملة الاغنية')
-$queue |اظهار قائمة التشغيل
-$np | اظهار الاغنية اللي انت مشغلها حاليا
-
-
-   
-   **
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-   
-           client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-		 **
-   
-           『Bot Info | معلومات البوت』
-         
-اسم البوت :
-HONER BOT
-تاق البوت :
-#3168
-برفكس البوت :
-++
-رابط السبورت :
-https://discord.gg/aF4tndR
-ايدي البوت :
-471464656242737183
-راعي البوت :
-! MHSTR 4K#0202 
-**
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-   
-
-
-
-
-   
-   client.on('guildCreate', guild => {
-    var embed = new Discord.RichEmbed()
-    .setColor(0x5500ff)
-    .setDescription(`**شكرا ${message.guild.owner} علي ثقتك بفريق NoobBot !
-    Thanks ${message.guild.owner} for trust NoobBot Team! **`)
-        guild.owner.send(embed)
-  });
-
-    
 client.login(process.env.BOT_TOKEN);
