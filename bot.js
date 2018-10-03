@@ -900,7 +900,7 @@ await message.channel.send("supports test")
 [${expe}]
 [${time}]
 [${lang}]`)
-              let rokzz = rokz.guild.channels.find("name","submite-list")
+              let rokzz = rokz.guild.channels.find("name","✻-submite-list")
               setTimeout(() => {
                 e.edit("تم التقديم")
               }, 3000)
