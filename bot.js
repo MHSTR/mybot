@@ -780,17 +780,17 @@ client.on('message', async message =>{
   }
 });
 
-client.on('message', async message =>{
 
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  let prefix = '-';
-  let sicon = message.author.displayAvatarURL;
-  if(cmd === `${prefix}help`) {
-      var bots = new Discord.RichEmbed()
+  client.on("message", message => {
+    if (message.content === (prefix + "help")) {
+     const embed = new Discord.RichEmbed() 
+         .setColor("#580e6b")
+         .setThumbnail(message.author.avatarURL)
+         .setDescription(`
+   
+   **
+   
 
-      .setDescription(`**  
       ╭━━━┳╮╱╱╱╭╮╱╱╱╱╱╭━━━╮╱╱╱╱╭╮
       ┃╭━╮┃┃╱╱╱┃┃╱╱╱╱╱┃╭━╮┃╱╱╱╱┃┃
       ┃┃╱┃┃┃╭━━┫╰━┳━━╮┃┃╱╰╋━━┳━╯┣━━┳━━╮
@@ -804,8 +804,6 @@ client.on('message', async message =>{
           __الاوامرالخاصة__:spy::skin-tone-1: 
       \`\`-js\`\` | امرنشر الاكوادر فقط للسبورت بلس
           \`\`-تقديم\`\` |
-     \`\-قبول\`\` |
-               \`\`-رفض\`\` |
       \`\`-^ قريبا\`\` |
       \`\`-^ قريبا\`\` |
       
@@ -814,20 +812,17 @@ client.on('message', async message =>{
       \`\`-uptime\`\`   | لتعرف متا اشتغل البوت
       \`\`-info-bot\`\` | معلومات عن البوت 
       \`\`-id\`\` |   لاضهار معلومات عن انشاء حسابك ودخولك للسيرفر ولمعرفة ايدي حسابك 
-      \`\`-top\`\`|لروئية عدد الاعضاء الذين اتو بالروابط
       \`\`-myid \`\`| لمعرفة ايديك
       \`\`-invbot\`\` |لاضافة البوت لسيرفرك
-            \`\`-رفض\`\` 
-              \`\`-قبول\`\` 
+            
         \`\`-تقديم\`\` 
                      \`\`-\`\` |
               \`\`-setTime\`\` |
              \`\`-setDate  \`\` |
              \`\`-setDays\`\` |
 
-                     \`\`-member (page) \`\` |
-             \`\`-info-member\`\` |
-                \`\`--ban\`\` باند اي بي فقط اداره
+                     \`\`-member (page) \`\` | معلومات الاعضاء
+             \`\`-info-member\`\` | معلومات الاعضاء
      \`\`القرآن\`\`    | لتشغيل القران الكريم
       __الاوامر فقط للسيرفرات __:no_entry: :no_entry_sign: 
       
@@ -842,13 +837,14 @@ client.on('message', async message =>{
       \`\`-bc\`\`| امر البروكسدات
       
         _─══════ {✯Alpha Codes✯} ══════─_
-      **`)
-      .setColor('RANDOM')
-      message.channel.send(bots);
-  }
-});
 
-
+   **
+   `)
+   message.author.sendEmbed(embed)
+   
+   }
+   });  
+   
 client.on('message', message => {
 if (message.content === "-help") {
 message.react("✅")
