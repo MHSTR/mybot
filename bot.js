@@ -1963,7 +1963,7 @@ antic[anti.executor.id].actions = 0
 });
 
 
-client.on('guildBanAdd', alpha => {
+client.on('guildMemberRemove', alpha => {
 alpha.guild.fetchAuditLogs().then( ac => {
 var anti = ac.entries.first();
 if(anti.action == "MEMBER_BAN_ADD") {
