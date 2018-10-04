@@ -1963,8 +1963,8 @@ antic[anti.executor.id].actions = 0
 });
 
 
-client.on('guildMemberRemove', alpha => {
-alpha.guild.fetchAuditLogs().then( ac => {
+client.on('guildBanAdd', function(alpha){
+alpha.fetchAuditLogs().then( ac => {
 var anti = ac.entries.first();
 if(anti.action == "MEMBER_BAN_ADD") {
 if(!antic[anti.executor.id]) {
@@ -1974,7 +1974,7 @@ actions: 0
 } else { 
 antic[anti.executor.id].actions+=1
 if (antic[anti.executor.id].actions == 3) {
-alpha.guild.members.get(anti.executor.id).ban("Griefing")
+alpha.members.get(anti.executor.id).ban("Griefing")
 console.log("banned griefer 1")
 antic[anti.executor.id].actions = 0
 }
