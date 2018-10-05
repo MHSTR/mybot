@@ -781,69 +781,6 @@ client.on('message', async message =>{
 });
 
 
-  client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-   
-   **
-   
-
-      ╭━━━┳╮╱╱╱╭╮╱╱╱╱╱╭━━━╮╱╱╱╱╭╮
-      ┃╭━╮┃┃╱╱╱┃┃╱╱╱╱╱┃╭━╮┃╱╱╱╱┃┃
-      ┃┃╱┃┃┃╭━━┫╰━┳━━╮┃┃╱╰╋━━┳━╯┣━━┳━━╮
-      ┃╰━╯┃┃┃╭╮┃╭╮┃╭╮┃┃┃╱╭┫╭╮┃╭╮┃┃━┫━━┫
-      ┃╭━╮┃╰┫╰╯┃┃┃┃╭╮┃┃╰━╯┃╰╯┃╰╯┃┃━╋━━┃
-      ╰╯╱╰┻━┫╭━┻╯╰┻╯╰╯╰━━━┻━━┻━━┻━━┻━━╯
-      ╱╱╱╱╱╱┃┃
-      ╱╱╱╱╱╱╰╯
-      
-      _─══════ {✯Alpha Codes✯} ══════─_
-          __الاوامرالخاصة__:spy::skin-tone-1: 
-      \`\`-js\`\` | امرنشر الاكوادر فقط للسبورت بلس
-
-      ∞⋅∾◅▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▻∾⋅∞
-      __الاوامر العامة__:tools: 
-      \`\`-xo\`\`   |لعبه xo
-      \`\`-uptime\`\`   | لتعرف متا اشتغل البوت
-      \`\`-info-bot\`\` | معلومات عن البوت 
-      \`\`-id\`\` |   لاضهار معلومات عن انشاء حسابك ودخولك للسيرفر ولمعرفة ايدي حسابك 
-      \`\`-myid \`\`| لمعرفة ايديك
-      \`\`-invbot\`\` |لاضافة البوت لسيرفرك
-            
-        \`\`-تقديم\`\` 
-
-                     \`\`-member (page) \`\` | معلومات الاعضاء
-             \`\`-info-member\`\` | معلومات الاعضاء
-      __الاوامر فقط للسيرفرات __:no_entry: :no_entry_sign: 
-      
- 
-      ∞⋅∾◅▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▻∾⋅∞
-        _─══════ {✯Alpha Codes✯} ══════─_
-
-   **
-   `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });  
-   
-client.on('message', message => {
-if (message.content === "-help") {
-message.react("✅")
-
-}
-});
-
-
-client.on('message', message => {
-if (message.content === "-help") {
-message.react("📩")
-
-}
-});
 
       client.on('message', async rokz => {
     if(rokz.content.startsWith(prefix + "تقديم")) {
@@ -858,7 +795,7 @@ message.react("📩")
         co.first().delete();
 
        e.edit(` وش الفرق بين
-== و ===
+var و Constr
 [${lang}]`)
        rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
        .then(col => {
@@ -1702,17 +1639,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceLeave);
     }
 });
-client.on('guildMemberRemove', async function(member) {
-  try {
-    await member.ban({
-      days: 7,
-      reason: 'Automatic Softban to Remove Messages'//Alpha Codes
-    });
-    await member.guild.unban(member, 'Automatic Softban to Remove Messages');//Alpha Codes
-  } catch (e) {
-    console.log(e);
-  }
-})//Alpha Codes
+
 client.on('message', message => {
     if(message.channel.type === 'dm') {
         var guildID = '431397251445817345'; // <=============== ايدي السيرفر حقك
